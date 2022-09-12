@@ -24,6 +24,8 @@ jobs: # basic units of work in a run
           command: |
             # log into private registry
             set -e
+	    pwd
+	    ls
             echo ${GCLOUD_SERVICE_ACCOUNT} | docker login \
               -u _json_key \
               --password-stdin \
