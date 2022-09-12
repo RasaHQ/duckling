@@ -9,7 +9,7 @@ jobs: # basic units of work in a run
     working_directory: $HOME/go/src/github.com/getoutreach/duckling
 
     environment: # environment variables for the build itself
-      CIRCLE_BUILD_DIR: $HOME/go/src/github.com/getoutreach/duckling
+      CIRCLE_BUILD_DIR: /home/circleci/project/$HOME/go/src/github.com/getoutreach/duckling
 
     steps:
       # adds the ssh key that Wheatley put here for us.  Ask Wheatley on slack to "setup circle for <project_name>"
@@ -24,7 +24,9 @@ jobs: # basic units of work in a run
           command: |
             # log into private registry
             set -e
+            echo -n "Working directory:"
             pwd
+	    echo -n "Contents of working directory"
             ls
             echo ${GCLOUD_SERVICE_ACCOUNT} | docker login \
               -u _json_key \
