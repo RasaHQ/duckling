@@ -26,7 +26,7 @@ jobs: # basic units of work in a run
             set -e
             echo -n "Working directory:"
             pwd
-	    echo -n "Contents of working directory"
+            echo -n "Contents of working directory"
             ls
             echo ${GCLOUD_SERVICE_ACCOUNT} | docker login \
               -u _json_key \
