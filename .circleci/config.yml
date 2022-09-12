@@ -62,4 +62,4 @@ workflows:
           context: docker-registry
           filters:
             branches:
-            only: master
+              only: master
