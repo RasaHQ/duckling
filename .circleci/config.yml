@@ -6,10 +6,10 @@ jobs: # basic units of work in a run
       - image: cimg/go:1.19
 
     # directory where steps are run. Path must conform to the Go Workspace requirements
-    working_directory: $HOME/go/src/github.com/getoutreach/duckling
+    working_directory: /home/circleci/project/go/src/github.com/getoutreach/duckling
 
     environment: # environment variables for the build itself
-      CIRCLE_BUILD_DIR: /home/circleci/project/$HOME/go/src/github.com/getoutreach/duckling
+      CIRCLE_BUILD_DIR: /home/circleci/project/go/src/github.com/getoutreach/duckling
 
     steps:
       # adds the ssh key that Wheatley put here for us.  Ask Wheatley on slack to "setup circle for <project_name>"
