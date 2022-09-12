@@ -3,7 +3,7 @@ jobs: # basic units of work in a run
   build_docker_image:
     docker: # run the steps with Docker
       # CircleCI Go images available at: https://hub.docker.com/r/circleci/golang/
-      - image: cimg/go:1.13
+      - image: cimg/go:1.19
 
     # directory where steps are run. Path must conform to the Go Workspace requirements
     working_directory: $HOME/go/src/github.com/getoutreach/duckling
@@ -60,6 +60,3 @@ workflows:
     jobs:
       - build_docker_image:
           context: docker-registry
-          filters:
-            branches:
-              only: master
