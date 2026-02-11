@@ -21,7 +21,7 @@ ADD . .
 # in parallel. However, this can cause OOM issues as the linking step
 # in GHC can be expensive. If the build fails, try specifying the
 # '-j1' flag to force the build to run sequentially.
-RUN stack install
+RUN stack install -j1
 
 FROM debian:bookworm
 
