@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        stack: ["2.5.1"]
-        ghc: ["8.6.5", "8.8.4", "8.10.3", "9.0.1"]
+        stack: ["3.3.1"]
+        ghc: ["9.2.5"]
 
     steps:
     - uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
         ghc-version: ${{ matrix.ghc }}
         stack-version: ${{ matrix.stack }}
 
-    - uses: actions/cache@v2.1.4
+    - uses: actions/cache@v3
       name: Cache ~/.stack
       with:
         path: ~/.stack
